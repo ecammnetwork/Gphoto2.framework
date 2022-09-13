@@ -953,6 +953,7 @@ static struct {
 	/* Jose Velez <jvelez00@gmail.com> */
 	{"Sony:NEX-7 (PTP mode)",     0x054c, 0x057d, 0},
 
+    
 	/* https://sourceforge.net/p/libmtp/bugs/1459/ */
 	{"Sony:HDR-PJ260VE (PTP mode)",0x054c, 0x0603, 0},
 
@@ -1162,8 +1163,6 @@ static struct {
     {"Sony:DSC-A7S III (Control)",        0x054c, 0x0d18, PTP_CAP|PTP_CAP_PREVIEW},
 
     {"Canon:PowerShot SX70 HS",        0x04a9, 0x32ee, PTP_CAP|PTP_CAP_PREVIEW},
-
-    {"Nikon:Z7_2",                      0x04b0, 0x044b, PTP_CAP|PTP_CAP_PREVIEW},
 
     {"Fuji:Fujifilm X-S10",            0x04cb, 0x02ea, PTP_CAP_PREVIEW},
     
@@ -1570,6 +1569,13 @@ static struct {
 
      /* Thomas Schaad <tom@avisec.ch> */
      {"Nikon:Z6_2",                      0x04b0, 0x044c, PTP_CAP|PTP_CAP_PREVIEW},
+    
+
+    {"Nikon:Z9",              0x04b0, 0x0450, PTP_CAP|PTP_CAP_PREVIEW},
+
+    /* Z://github.com/gphoto/libgphoto2/pull/750#issuecomment-1189987634 */
+    {"Nikon:Z30",              0x04b0, 0x0452, PTP_CAP|PTP_CAP_PREVIEW},
+
     
 	/* http://sourceforge.net/tracker/?func=detail&aid=3536904&group_id=8874&atid=108874 */
 	{"Nikon:V1",    		  0x04b0, 0x0601, PTP_CAP|PTP_NIKON_1},
@@ -2237,6 +2243,8 @@ static struct {
 
     {"Canon:EOS M50 Mark II",                  0x04a9, 0x32f9, PTP_CAP|PTP_CAP_PREVIEW},
 
+    {"Canon:EOS R5 C",            0x04a9, 0x3303, PTP_CAP|PTP_CAP_PREVIEW},
+    
 	/* Marcus Meissner */
 	{"Canon:Digital IXUS 185",          	0x04a9, 0x32d4, 0},
 
@@ -2267,7 +2275,8 @@ static struct {
     /* Steve Rencontre <steve@rsn-tech.co.uk> */
      {"Canon:EOS R6",            0x04a9, 0x32f5, PTP_CAP|PTP_CAP_PREVIEW},
 
-
+    {"Canon:EOS R10",            0x04a9, 0x32f8, PTP_CAP|PTP_CAP_PREVIEW},
+    
 	/* https://github.com/gphoto/libgphoto2/issues/316 */
 	{"Canon:PowerShot SX740 HS",		0x04a9, 0x32e4, PTP_CAP|PTP_CAP_PREVIEW},
 
@@ -2466,6 +2475,7 @@ static struct {
 
 	{"Sanyo:VPC-C5 (PTP mode)",             0x0474, 0x0230, 0},
 
+    
 	/* from Mike Meyer <mwm@mired.org>. Does not support MTP. */
 	{"Apple:iPhone (PTP mode)",		0x05ac, 0x1290, 0},
 	/* IRC reporter adjusted info */
@@ -2900,6 +2910,11 @@ camera_exit (Camera *camera, GPContext *context)
 					ptp_canon_eos_end_viewfinder (params);
 				camera_unprepare_capture (camera, context);
 			}
+                /* this switches the display back on ... */
+			if (ptp_operation_issupported(params, PTP_OC_CANON_EOS_SetRemoteMode)) {
+				C_PTP (ptp_canon_eos_setremotemode(params, 1));
+			}
+                
 			break;
 		case PTP_VENDOR_NIKON:
 			if (ptp_operation_issupported(params, PTP_OC_NIKON_EndLiveView))
