@@ -1104,6 +1104,9 @@ static struct {
     // Sony a7c
     {"Sony:ILCE-7C (Control)",        0x054c, 0x0d2b, PTP_CAP|PTP_CAP_PREVIEW},
 
+    /* https://github.com/gphoto/libgphoto2/issues/892 */
+    {"Sony:ILCE-1 (Control)",        0x054c, 0x0d1c, PTP_CAP|PTP_CAP_PREVIEW},
+    
     {"Olympus:E-M1 MII",              0x07b4, 0x0135, PTP_CAP|PTP_CAP_PREVIEW},
 
 	/* Demo7up <demo7up@gmail.com> */
@@ -1157,6 +1160,9 @@ static struct {
          /* https://github.com/gphoto/libgphoto2/issues/749 */
     {"Sony:ILCE-7RM4A (PC Control)",    0x054c, 0x0d9f, PTP_CAP|PTP_CAP_PREVIEW},
 	
+    /* https://github.com/gphoto/libgphoto2/issues/896 */
+    {"Sony:ILME-FX3 (PC Control)",        0x054c, 0x0da3, PTP_CAP|PTP_CAP_PREVIEW},
+    
     /* Elijah Parker, mail@timelapseplus.com */
 	{"Sony:DSC-A7r IV (Control)",		0x054c, 0x0ccc, PTP_CAP|PTP_CAP_PREVIEW},
 
@@ -1165,6 +1171,10 @@ static struct {
     {"Canon:PowerShot SX70 HS",        0x04a9, 0x32ee, PTP_CAP|PTP_CAP_PREVIEW},
 
     {"Fuji:Fujifilm X-S10",            0x04cb, 0x02ea, PTP_CAP_PREVIEW},
+    {"Fuji:Fujifilm X-H2",            0x04cb, 0x02f2, PTP_CAP|PTP_CAP_PREVIEW},
+    
+    /* https://github.com/gphoto/libgphoto2/issues/888 */
+    {"Fuji:Fujifilm X-T5",            0x04cb, 0x02fc, PTP_CAP|PTP_CAP_PREVIEW},
     
 	/* Nikon Coolpix 2500: M. Meissner, 05 Oct 2003 */
 	{"Nikon:Coolpix 2500 (PTP mode)", 0x04b0, 0x0109, 0},
@@ -1576,6 +1586,8 @@ static struct {
     /* Z://github.com/gphoto/libgphoto2/pull/750#issuecomment-1189987634 */
     {"Nikon:Z30",              0x04b0, 0x0452, PTP_CAP|PTP_CAP_PREVIEW},
 
+    /* Ben Govero */
+    {"Nikon:Z8",              0x04b0, 0x0451, PTP_CAP|PTP_CAP_PREVIEW},
     
 	/* http://sourceforge.net/tracker/?func=detail&aid=3536904&group_id=8874&atid=108874 */
 	{"Nikon:V1",    		  0x04b0, 0x0601, PTP_CAP|PTP_NIKON_1},
@@ -2244,6 +2256,13 @@ static struct {
     {"Canon:EOS M50 Mark II",                  0x04a9, 0x32f9, PTP_CAP|PTP_CAP_PREVIEW},
 
     {"Canon:EOS R5 C",            0x04a9, 0x3303, PTP_CAP|PTP_CAP_PREVIEW},
+    /* https://github.com/gphoto/libgphoto2/issues/881 */
+    {"Canon:EOS R6m2",            0x04a9, 0x330b, PTP_CAP|PTP_CAP_PREVIEW},
+    
+    /* https://github.com/gphoto/libgphoto2/issues/924 */
+    {"Canon:EOS R100",            0x04a9, 0x3312, PTP_CAP|PTP_CAP_PREVIEW},
+    
+    {"Canon:EOS R50",            0x04a9, 0x330d, PTP_CAP|PTP_CAP_PREVIEW},
     
 	/* Marcus Meissner */
 	{"Canon:Digital IXUS 185",          	0x04a9, 0x32d4, 0},
@@ -2275,6 +2294,9 @@ static struct {
     /* Steve Rencontre <steve@rsn-tech.co.uk> */
      {"Canon:EOS R6",            0x04a9, 0x32f5, PTP_CAP|PTP_CAP_PREVIEW},
 
+    /* https://github.com/gphoto/libgphoto2/issues/832 */
+        {"Canon:EOS R7",            0x04a9, 0x32f7, PTP_CAP|PTP_CAP_PREVIEW},
+    
     {"Canon:EOS R10",            0x04a9, 0x32f8, PTP_CAP|PTP_CAP_PREVIEW},
     
 	/* https://github.com/gphoto/libgphoto2/issues/316 */
@@ -4522,6 +4544,7 @@ camera_sony_capture (Camera *camera, CameraCaptureType type, CameraFilePath *pat
          !strcmp(params->deviceinfo.Model, "DSC-RX100M7")	||
  		 !strcmp(params->deviceinfo.Model, "ILCE-7RM4") ||
          !strcmp(params->deviceinfo.Model, "DSC-RX0M2") ||
+         !strcmp(params->deviceinfo.Model, "ILCE-7M3")        ||
          !strcmp(params->deviceinfo.Model, "ILCE-7C")
 
      )) {
