@@ -936,16 +936,18 @@
 				INFOPLIST_FILE = "Gphoto2-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-Wl,-reexport_library",
 					"${CONFIGURATION_BUILD_DIR}/libgphoto2.6.dylib",
 					"-Wl,-reexport_library",
 					"${CONFIGURATION_BUILD_DIR}/libgphoto2_port.10.dylib",
+					"-lSystem",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
+				SDKROOT = macosx13.0;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -983,15 +985,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"-Wl,-reexport_library",
 					"${CONFIGURATION_BUILD_DIR}/libgphoto2.6.dylib",
 					"-Wl,-reexport_library",
 					"${CONFIGURATION_BUILD_DIR}/libgphoto2_port.10.dylib",
+					"-lSystem",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
+				SDKROOT = macosx13.0;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1034,7 +1038,7 @@
 					"$(SRCROOT)/libtool/libltdl",
 				);
 				LIBGPHOTO_PORT_DEFINES = "HAVE_CONFIG_H _GPHOTO2_INTERNAL_CODE";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1074,7 +1078,7 @@
 					"$(SRCROOT)/libtool/libltdl",
 				);
 				LIBGPHOTO_PORT_DEFINES = "HAVE_CONFIG_H _GPHOTO2_INTERNAL_CODE";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
@@ -1121,7 +1125,7 @@
 					"$(SRCROOT)/libtool/libltdl",
 				);
 				LIBGPHOTO_DEFINES = "_GPHOTO2_INTERNAL_CODE ";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1163,7 +1167,7 @@
 					"$(SRCROOT)/libtool/libltdl",
 				);
 				LIBGPHOTO_DEFINES = "_GPHOTO2_INTERNAL_CODE ";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
@@ -1208,7 +1212,7 @@
 				);
 				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
 				LIBGPHOTO_DEFINES = _GPHOTO2_INTERNAL_CODE;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1248,7 +1252,7 @@
 				);
 				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
 				LIBGPHOTO_DEFINES = _GPHOTO2_INTERNAL_CODE;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
