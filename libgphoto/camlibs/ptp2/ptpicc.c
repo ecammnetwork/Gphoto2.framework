@@ -70,7 +70,7 @@
 
 /* send / receive functions */
 uint16_t
-ptp_ptpicc_sendreq (PTPParams* params, PTPContainer* req)
+ptp_ptpicc_sendreq (PTPParams* params, PTPContainer* req, int dataphase)
 {
  //   printf("ptp_ptpicc_sendreq operationCode 0x%x\n", req->Code);
 	int		len = 12+req->Nparam*4;

@@ -2994,7 +2994,7 @@ uint16_t ptp_ptpip_event_check	(PTPParams* params, PTPContainer* event);
 uint16_t ptp_ptpip_event_check_queue	(PTPParams* params, PTPContainer* event);
 
 int      ptp_ptpicc_connect	(PTPParams* params, const char *port);
-uint16_t ptp_ptpicc_sendreq	(PTPParams* params, PTPContainer* req);
+uint16_t ptp_ptpicc_sendreq	(PTPParams* params, PTPContainer* req, int dataphase);
 uint16_t ptp_ptpicc_senddata	(PTPParams* params, PTPContainer* ptp,
                                  uint64_t size, PTPDataHandler *handler);
 uint16_t ptp_ptpicc_getresp	(PTPParams* params, PTPContainer* resp);
