@@ -995,6 +995,9 @@ static struct {
 
     {"Sony:Alpha-A6600 (PC Control)",    0x054c, 0x0d10, PTP_CAP|PTP_CAP_PREVIEW},
 
+    /* https://github.com/gphoto/libgphoto2/issues/943 */
+    {"Sony:Alpha-A6100 (PC Control)",    0x054c, 0x0d14, PTP_CAP|PTP_CAP_PREVIEW},
+    
 	/* bertrand.chambon@free.fr */
 	{"Sony:Alpha-A68 (MTP)",      0x054c, 0x0779, 0},
 	/* https://github.com/gphoto/libgphoto2/issues/70 */
@@ -1009,6 +1012,8 @@ static struct {
 	/* https://github.com/gphoto/libgphoto2/issues/70 */
 	{"Sony:Alpha-A6300 (Control)",0x054c, 0x079c, PTP_CAP|PTP_CAP_PREVIEW},
 
+    {"Sony:A6700 (PC Control)",        0x054c, 0x0e78, PTP_CAP|PTP_CAP_PREVIEW},
+    
 	/* Anja Stock at SUSE */
 	{"Sony:DSC-RX10M3 (Control)",  	0x054c, 0x079d, PTP_CAP|PTP_CAP_PREVIEW},
 
@@ -1175,6 +1180,9 @@ static struct {
     
     /* https://github.com/gphoto/libgphoto2/issues/888 */
     {"Fuji:Fujifilm X-T5",            0x04cb, 0x02fc, PTP_CAP|PTP_CAP_PREVIEW},
+    
+    /* via email */
+        {"Fuji:Fujifilm GFX100 II",        0x04cb, 0x02fe, PTP_CAP|PTP_CAP_PREVIEW},
     
 	/* Nikon Coolpix 2500: M. Meissner, 05 Oct 2003 */
 	{"Nikon:Coolpix 2500 (PTP mode)", 0x04b0, 0x0109, 0},
@@ -1557,6 +1565,11 @@ static struct {
 
 	/* Andre Crone <visuals@elysia.nl> */
 	{"Nikon:DSC D850",                0x04b0, 0x0441, PTP_CAP|PTP_CAP_PREVIEW},
+
+    {"Nikon:Zf",                      0x04b0, 0x0453, PTP_CAP|PTP_CAP_PREVIEW},
+
+    /* via email */
+    {"Nikon:Z6 III",                  0x04b0, 0x0454, PTP_CAP|PTP_CAP_PREVIEW},
 
 	/* Horshack ?? <horshack@live.com> */
 	{"Nikon:Z7",                	  0x04b0, 0x0442, PTP_CAP|PTP_CAP_PREVIEW},
@@ -2262,6 +2275,9 @@ static struct {
     /* https://github.com/gphoto/libgphoto2/issues/924 */
     {"Canon:EOS R100",            0x04a9, 0x3312, PTP_CAP|PTP_CAP_PREVIEW},
     
+    /* https://github.com/gphoto/libgphoto2/issues/1028 */
+        {"Canon:EOS 5Rm2",            0x04a9, 0x3314, PTP_CAP|PTP_CAP_PREVIEW},
+    
     {"Canon:EOS R50",            0x04a9, 0x330d, PTP_CAP|PTP_CAP_PREVIEW},
     
 	/* Marcus Meissner */
@@ -2299,6 +2315,11 @@ static struct {
     
     {"Canon:EOS R10",            0x04a9, 0x32f8, PTP_CAP|PTP_CAP_PREVIEW},
     
+    /* https://github.com/gphoto/libgphoto2/issues/642 */
+    {"Canon:EOS M50m2",            0x04a9, 0x32f9, PTP_CAP|PTP_CAP_PREVIEW},
+    /* E-mail */
+    {"Canon:EOS R3",            0x04a9, 0x32fc, PTP_CAP|PTP_CAP_PREVIEW},
+
 	/* https://github.com/gphoto/libgphoto2/issues/316 */
 	{"Canon:PowerShot SX740 HS",		0x04a9, 0x32e4, PTP_CAP|PTP_CAP_PREVIEW},
 
